@@ -20,6 +20,7 @@ Nx = 15
 Ny = 15
 Nz = 11
 
+cutoff = np.floor(Nz/2)-2
 
 ##### VARIABLE INITIALIZATION #######
 latticeleft1=np.zeros(2*Nx*Ny*Nz)
@@ -279,7 +280,7 @@ def clambda(l,N):
 
 for i in range(Nx):
     for j in range(Ny):
-        for k in range(int(np.floor(Nz/2))-3):
+        for k in range(int(np.floor(Nz/2))-cutoff):
             for m in range(2):
                 latticeleft1 += latticevector3d(i,j,k,m)
 
@@ -287,7 +288,7 @@ for i in range(Nx):
 
 for i in range(Nx):
     for j in range(Ny):
-        for k in range(int(np.floor(Nz/2))+3,Nz):
+        for k in range(int(np.floor(Nz/2))+cutoff,Nz):
             for m in range(2):
                 latticeleft2 += latticevector3d(i,j,k,m)
 
