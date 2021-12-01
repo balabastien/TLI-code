@@ -264,7 +264,7 @@ def clambda(l,N):
 
 
 for i in range(Nx):
-    for j in range(int(np.floor(Ny/2))-cutoff):
+    for j in range(int(np.floor(Ny/2))-int(cutoff)):
         for k in range(Nz):
             for m in range(2):
                 latticeleft1 += latticevector3d(i,j,k,m)
@@ -272,7 +272,7 @@ for i in range(Nx):
 
 
 for i in range(Nx):
-    for j in range(int(np.floor(Ny/2))+cutoff,Ny):
+    for j in range(int(np.floor(Ny/2))+int(cutoff),Ny):
         for k in range(Nz):
             for m in range(2):
                 latticeleft2 += latticevector3d(i,j,k,m)
