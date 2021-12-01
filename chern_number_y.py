@@ -11,6 +11,7 @@ Nx = 15
 Ny = 11
 Nz = 15
 
+cutoff = np.floor(Ny/2)-2
 
 
 latticeleft1=np.zeros(2*Nx*Ny*Nz)
@@ -263,7 +264,7 @@ def clambda(l,N):
 
 
 for i in range(Nx):
-    for j in range(int(np.floor(Ny/2))-3):
+    for j in range(int(np.floor(Ny/2))-cutoff):
         for k in range(Nz):
             for m in range(2):
                 latticeleft1 += latticevector3d(i,j,k,m)
@@ -271,7 +272,7 @@ for i in range(Nx):
 
 
 for i in range(Nx):
-    for j in range(int(np.floor(Ny/2))+3,Ny):
+    for j in range(int(np.floor(Ny/2))+cutoff,Ny):
         for k in range(Nz):
             for m in range(2):
                 latticeleft2 += latticevector3d(i,j,k,m)
