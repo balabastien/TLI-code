@@ -192,10 +192,8 @@ def wannierxyz2(Rx, Ry,Rz):
 
 def wannierxyz1ntrunc(Rx,Ry,Rz):
     wannierxyz1ntrunc = np.array(wannierxyz1(Rx,Ry,Rz))
-    if Rz>int(np.floor(Nz/2)):
+    if Rz>=int(np.floor(Nz/2)):
         wannierxyz1ntrunc[:(Rz-int(np.floor(Nz/2))),:Nx,:Ny,:2] =0
-    if Rz == int(np.floor(Nz/2)):  
-        wannierxyz1ntrunc = wannierxyz1(int(np.floor(Nz/2)),Rx,Ry)
     if Rz < int(np.floor(Nz/2)):                                   
         wannierxyz1ntrunc[int(np.floor(Nz/2))+Rz:Nz,:Nx,:Ny,:2] =0
     return wannierxyz1ntrunc
@@ -203,10 +201,8 @@ def wannierxyz1ntrunc(Rx,Ry,Rz):
 
 def wannierxyz2ntrunc(Rx,Ry,Rz):
     wannierxyz2ntrunc = np.array(wannierxyz2(Rx,Ry,Rz))
-    if Rz>int(np.floor(Nz/2)):
+    if Rz>=int(np.floor(Nz/2)):
         wannierxyz2ntrunc[:(Rz-int(np.floor(Nz/2))),:Nx,:Ny,:2] =0
-    if Rz == int(np.floor(Nz/2)):  
-        wannierxyz2ntrunc = wannierxyz2(int(np.floor(Nz/2)),Rx,Ry)
     if Rz < int(np.floor(Nz/2)):                                   
         wannierxyz2ntrunc[int(np.floor(Nz/2))+Rz:Nz,:Nx,:Ny,:2] =0
     return wannierxyz2ntrunc
