@@ -4,10 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.linalg import expm
 import seaborn as sns; sns.set_theme()
-from mayavi import mlab
 
-from mpl_toolkits.mplot3d import Axes3D
-from pylab import *
 
 
 
